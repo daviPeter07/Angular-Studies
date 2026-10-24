@@ -1,0 +1,12 @@
+<button 
+type="button" 
+class="tech-button" 
+(click)="onToggleClick()">
+  {{ visible() ? `Ocultar Tecnologias` : 'Mostrar Tecnologias' }}
+  
+  @if (visible()) {
+    <svg lucideArrowUp></svg>
+  } @else {
+    <svg lucideArrowDown></svg>
+  }
+</button>

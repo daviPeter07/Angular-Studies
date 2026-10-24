@@ -1,0 +1,29 @@
+<div class="developer-main">
+  <div class="developer-header">
+    <img src="/images/waves-dark.webp" width="50" height="50" alt="Imagem do Desenvolvedor Davi" />
+    <h1>{{ name() }}</h1>
+    <h3>{{ role() }}</h3>
+  </div>
+
+  <br />
+
+  <div class="stacks-card">
+    <h3>Tecnologias utilizadas</h3>
+
+    @if (showStacks) {
+      <div class="stacks-list">
+        @for (stack of stacks; track stack.id) {
+          <span class="stack-item">
+            {{ stack.name }}
+          </span>
+        }
+      </div>
+    }
+
+    <app-button-stacks 
+    //componente pai diz se as stacks estao visiveis ou nao
+    [visible]="showStacks" 
+    (toggleRequested)="toggleStacks()" 
+    />
+  </div>
+</div>
